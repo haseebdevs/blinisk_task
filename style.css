@@ -569,8 +569,135 @@ header {
 }
 
 /* ============================================= */
+/*              Partners Section             */
+/* ============================================= */
+
+.partners .container {
+  max-width: 1000px;
+}
+
+.partners .secondary-text {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.partners .partners-box {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns of equal width */
+  grid-auto-rows: minmax(90px, auto); /* controls minimum row height */
+}
+
+.partners .partner-box {
+  padding: 1rem;
+  border-radius: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.partners .partner-box img {
+  width: 150px;
+}
+
+/* ============================================= */
+/*                 Contact Section               */
+/* ============================================= */
+
+.contact .container {
+  max-width: 1200px;
+  display: flex;
+  gap: 5rem;
+}
+
+.contact .img-box img {
+  width: 500px;
+}
+
+.contact form {
+  margin-top: 5rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.contact form div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.contact input,
+.contact textarea {
+  padding: 1rem;
+  border-radius: 2rem;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  outline: none; /* ← this kills the blue line */
+}
+
+/* Recommended minimum focus style (accessibility) */
+.contact input:focus,
+.contact textarea:focus {
+  box-shadow: 0 0 0 3px rgba(101, 241, 99, 0.35);
+}
+
+.contact button {
+  width: max-content;
+}
+
+/* ============================================= */
+/*                 Footer               */
+/* ============================================= */
+
+.footer {
+  background: #f0f0f0;
+  padding: 5rem;
+}
+
+.footer .container {
+  max-width: 1200px;
+  background: #eafbf3;
+  padding: 4rem;
+  border-radius: 3rem;
+  display: flex;
+  gap: 4rem;
+}
+
+.footer .links {
+  display: flex;
+  gap: 4rem;
+}
+
+.footer .links h6 {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.footer .links a {
+  color: #222;
+  font-size: 1.2rem;
+  display: block;
+  text-decoration: none;
+}
+
+/* ============================================= */
 /*                   Responsive                  */
 /* ============================================= */
+
+@media (max-width: 1200px) {
+  .products .upper-layout img {
+    display: none;
+  }
+
+  .partners .partners-box {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .contact .img-box img {
+    width: 350px;
+  }
+}
 
 @media (max-width: 960px) {
   .hero .container {
@@ -607,9 +734,29 @@ header {
   }
   /* ──────────────── */
 
+  .vision .container {
+    grid-template-columns: 1fr;
+  }
+
   .testimonial-card {
     flex: 0 0 320px;
     padding: 2rem 1.8rem;
+  }
+
+  .partners .partners-box {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contact .img-box {
+    display: none;
+  }
+
+  .footer .container {
+    flex-wrap: wrap;
+  }
+
+  .footer .links {
+    flex-wrap: wrap;
   }
 }
 
@@ -676,6 +823,10 @@ header {
   .features .container .img-box {
     display: none;
   }
+
+  .partners .partners-box {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 640px) {
@@ -711,5 +862,10 @@ header {
 
   .mobile-arrows {
     gap: 4rem;
+  }
+
+  .partners .partners-box {
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-auto-rows: minmax(90px, auto); */
   }
 }
